@@ -55,7 +55,7 @@ The provided code also includes `EncryptedMemory`, which closely follows the imp
 
 Since you'll be messing with a SimObject implementation, you may find it useful to print out useful debugging messages as you go. We'll be doing this by writing a **debug flag** to `PacketEncryptor` and adding debug printing statements to its implementation.
 
-Adding `DebugFlags` was covered in the [debugging lesson](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/lessons/04-gem5-models/04a-cpus/04-debugging.md); you may want to use the process of defining and enabling a flag for `LocalBP` when writing your debug flag for `PacketEncryptor`. Your flag should:
+Adding `DebugFlags` was covered in the [debugging lesson](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/04-debugging.md); you may want to use the process of defining and enabling a flag for `LocalBP` when writing your debug flag for `PacketEncryptor`. Your flag should:
 
 - Be named `Encryptor`,
 - Be defined in `PacketEncryptor`'s SConscript,
