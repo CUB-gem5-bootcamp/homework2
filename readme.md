@@ -12,10 +12,10 @@ This assignment builds on Unit IV. You may want to refer to it as you work.
 
 | Lesson | Relevant Topics |
 |---|---|
-| [SimObjects](../../lessons/04-gem5-models/04a-cpus/01-sim-objects.md) | Navigating SimObject files and building gem5.|
-| [Event-driven simulation](../../lessons/04-gem5-models/04a-cpus/02-event-driven-sim.md) | Explaining event-driven simulation and using gem5 `Event` and `EventFunctionWrapper`. |
-| [Ports](../../lessons/04-gem5-models/04a-cpus/03-ports.md) | Using the gem5 ports and packet interface; using events to schedule port-related actions;  the `PacketInspector` SimObject implementation.|
-| [Debugging](../../lessons/04-gem5-models/04a-cpus/04-debugging.md) | Writing and enabling a debugging flag. |
+| [SimObjects](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/01-sim-objects.md) | Navigating SimObject files and building gem5.|
+| [Event-driven simulation](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/02-event-driven-sim.md) | Explaining event-driven simulation and using gem5 `Event` and `EventFunctionWrapper`. |
+| [Ports](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/03-ports.md) | Using the gem5 ports and packet interface; using events to schedule port-related actions;  the `PacketInspector` SimObject implementation.|
+| [Debugging](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/04-debugging.md) | Writing and enabling a debugging flag. |
 
 ## Instructions
 
@@ -25,7 +25,7 @@ Our goal for this assignment is to implement a simple version of **memory encryp
 
 ![A diagram depicting memory encryption. When a processor makes a write request, its data is encrypted before being stored into the encrypted memory system. When the memory system sends a data read response to the processor, the encrypted data is decrypted before arriving at the processor.](img/memory_encryption.png)
 
-In the [Ports lesson](../../lessons/04-gem5-models/04a-cpus/03-ports.md), we implemented `PacketInspector`, a unit that (at the moment) intercepts all packets heading into and out of memory and "inspects" them; really, it simply queues incoming and outgoing packets into separate buffers with an imposed clock cycle latency. In this assignment, you'll be using `PacketInspector` as the basis for a new SimObject named `PacketEncryptor` that encrypts the data of incoming memory writes and decrypts the data of outgoing memory reads.
+In the [Ports lesson](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/03-ports.md), we implemented `PacketInspector`, a unit that (at the moment) intercepts all packets heading into and out of memory and "inspects" them; really, it simply queues incoming and outgoing packets into separate buffers with an imposed clock cycle latency. In this assignment, you'll be using `PacketInspector` as the basis for a new SimObject named `PacketEncryptor` that encrypts the data of incoming memory writes and decrypts the data of outgoing memory reads.
 
 ![A diagram similar to the one in the ports lesson depicting a simplified view of a processor interacting with memory using packets sent from the processor's RequestPort to memory's ResponsePort. Between the two, the PacketEncryptor unit intercepts all packets in both directions before sending them along.](img/packet_encryptor.png)
 
@@ -45,7 +45,7 @@ The provided code for this assignment is a renamed version of `PacketInspector` 
 
 > The reasons for this renaming will become clear in Part 2!
 
-You should read through the implementation of `PacketEncryptor` to remind yourself how the class is structured; you can refer to the [ports lesson](../../lessons/04-gem5-models/04a-cpus/03-ports.md) for a thorough walkthrough of the request path.
+You should read through the implementation of `PacketEncryptor` to remind yourself how the class is structured; you can refer to the [ports lesson](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/04-gem5-models/04a-cpus/03-ports.md) for a thorough walkthrough of the request path.
 
 The provided code also includes `EncryptedMemory`, which closely follows the implementation of `InspectedMemory`, and `packet_encryptor_config.py`, a configuration script that makes use of `EncryptedMemory` with a linear traffic generator and no cache.
 
@@ -55,7 +55,7 @@ The provided code also includes `EncryptedMemory`, which closely follows the imp
 
 Since you'll be messing with a SimObject implementation, you may find it useful to print out useful debugging messages as you go. We'll be doing this by writing a **debug flag** to `PacketEncryptor` and adding debug printing statements to its implementation.
 
-Adding `DebugFlags` was covered in the [debugging lesson](../../lessons/04-gem5-models/04a-cpus/04-debugging.md); you may want to use the process of defining and enabling a flag for `LocalBP` when writing your debug flag for `PacketEncryptor`. Your flag should:
+Adding `DebugFlags` was covered in the [debugging lesson](https://github.com/CUB-gem5-bootcamp/lessons/blob/19d28b02c4ec791cf0c7f768f5f2746c9fe01186/lessons/04-gem5-models/04a-cpus/04-debugging.md); you may want to use the process of defining and enabling a flag for `LocalBP` when writing your debug flag for `PacketEncryptor`. Your flag should:
 
 - Be named `Encryptor`,
 - Be defined in `PacketEncryptor`'s SConscript,
