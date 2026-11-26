@@ -33,7 +33,7 @@ Similar to how we used the new `InspectedMemory` component as a wrapper for a me
 
 ![A diagram similar to the one in the ports lesson depicting a simplified view of the EncryptedMemory unit. The processor communicates through its RequestPort with an EncryptedMemory unit, which contains within it both memory and a PacketEncryptor unit intercepting and encrypting packets.](img/encrypted_memory.png)
 
-We'll tackle writing this unit in multiple steps: we'll add a debugging flag to `PacketEncryptor`, implement encryption functionality, then improve the throughput of our system.
+We'll tackle writing this unit in multiple steps: we'll add a debugging flag to `PacketEncryptor`, implement encryption functionality, then improve the throughput of our system. Make sure you add the code you want to compile into gem5 in the src directory, otherwise SCons will not include it in the compilation. 
 
 ## Part 0: Exploring the provided code
 
